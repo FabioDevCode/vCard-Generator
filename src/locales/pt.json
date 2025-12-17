@@ -1,40 +1,40 @@
 {
     "app": {
         "title": "Gerador de QR Code vCard",
-        "subtitle": "Crie e compartilhe suas informações de contato facilmente"
+        "subtitle": "Crie e partilhe as suas informações de contacto facilmente"
     },
     "form": {
         "firstName": "Nome",
-        "lastName": "Sobrenome",
-        "phone": "Telefone",
+        "lastName": "Apelido",
+        "phone": "Telemóvel",
         "email": "Email",
         "company": "Empresa",
         "jobTitle": "Cargo",
-        "website": "Site",
+        "website": "Website",
         "generateQr": "Gerar QR Code",
-        "saveProfile": "Salvar Perfil",
+        "saveProfile": "Guardar Perfil",
         "profileName": "Nome do Perfil",
-        "profileNamePlaceholder": "Meu perfil",
+        "profileNamePlaceholder": "O meu perfil",
         "validation": {
             "required": "Este campo é obrigatório",
             "invalidEmail": "Email inválido",
-            "invalidPhone": "Número de telefone inválido",
-            "invalidUrl": "URL inválida"
+            "invalidPhone": "Número de telemóvel inválido",
+            "invalidUrl": "URL inválido"
         }
     },
     "qrCode": {
         "title": "QR Code",
         "empty": "Preencha o formulário e clique em Gerar",
-        "download": "Baixar como JPEG"
+        "download": "Transferir como JPEG"
     },
     "profiles": {
-        "title": "Perfis Salvos",
+        "title": "Perfis Guardados",
         "select": "Selecionar um perfil",
-        "noProfiles": "Nenhum perfil salvo",
-        "delete": "Excluir",
-        "confirmDelete": "Tem certeza de que deseja excluir este perfil?",
-        "saved": "Perfil salvo!",
-        "deleted": "Perfil excluído"
+        "noProfiles": "Nenhum perfil guardado",
+        "delete": "Eliminar",
+        "confirmDelete": "Tem a certeza de que deseja eliminar este perfil?",
+        "saved": "Perfil guardado!",
+        "deleted": "Perfil eliminado"
     },
     "theme": {
         "dark": "Escuro",
