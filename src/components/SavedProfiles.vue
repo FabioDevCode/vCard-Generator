@@ -54,6 +54,7 @@ const handleDeleteProfile = () => {
           v-model:value="selectedProfileId"
           :options="profileOptions"
           :placeholder="t('profiles.select')"
+          size="medium"
           clearable
           @update:value="handleSelectProfile"
         />
@@ -64,7 +65,7 @@ const handleDeleteProfile = () => {
           @positive-click="handleDeleteProfile"
         >
           <template #trigger>
-            <NButton type="error" size="small" secondary block>
+            <NButton type="error" size="medium" secondary block>
               {{ t('profiles.delete') }}
             </NButton>
           </template>

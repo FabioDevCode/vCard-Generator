@@ -180,6 +180,7 @@ html, body {
   align-items: start;
   overflow: visible;
   margin: 24px;
+  margin-bottom: 48px;
 }
 
 .form-section {

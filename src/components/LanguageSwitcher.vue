@@ -21,8 +21,8 @@ const handleChange = (value: SupportedLocale) => {
   <NSelect
     :value="currentLocale"
     :options="options"
-    size="small"
-    style="width: 140px"
+    size="medium"
+    style="width: 160px"
     @update:value="handleChange"
   />
 </template>

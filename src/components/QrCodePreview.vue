@@ -30,6 +30,7 @@ const hasQrCode = computed(() => !!props.qrDataUrl)
           <NSpace justify="center" class="qr-actions">
             <NButton
               type="primary"
+              size="large"
               @click="emit('download')"
             >
               {{ t('qrCode.download') }}

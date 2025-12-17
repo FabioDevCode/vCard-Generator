@@ -24,16 +24,52 @@ export function useTheme() {
             primaryColor,
             primaryColorHover,
             primaryColorPressed,
-            primaryColorSuppl
+            primaryColorSuppl,
+            heightMedium: '44px',
+            heightLarge: '48px',
+            fontSizeMedium: '16px',
+            fontSizeLarge: '17px',
+            borderRadius: '10px'
         },
         Button: {
             colorPrimary: primaryColor,
             colorHoverPrimary: primaryColorHover,
             colorPressedPrimary: primaryColorPressed,
-            colorFocusPrimary: primaryColorHover
+            colorFocusPrimary: primaryColorHover,
+            heightMedium: '44px',
+            heightLarge: '48px',
+            fontSizeMedium: '16px',
+            fontSizeLarge: '17px',
+            paddingMedium: '0 20px',
+            paddingLarge: '0 24px'
+        },
+        Input: {
+            heightMedium: '44px',
+            heightLarge: '48px',
+            fontSizeMedium: '16px',
+            fontSizeLarge: '17px',
+            paddingMedium: '0 14px',
+            paddingLarge: '0 16px'
+        },
+        Select: {
+            heightMedium: '44px',
+            heightLarge: '48px'
         },
         Switch: {
-            railColorActive: primaryColor
+            railColorActive: primaryColor,
+            railHeight: '28px',
+            railWidth: '52px',
+            buttonHeight: '24px',
+            buttonWidth: '24px'
+        },
+        Form: {
+            labelFontSizeTopMedium: '15px',
+            labelFontSizeTopLarge: '16px',
+            feedbackFontSizeMedium: '14px'
+        },
+        Card: {
+            titleFontSizeMedium: '18px',
+            titleFontSizeLarge: '20px'
         }
     }))
 
