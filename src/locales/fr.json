@@ -1,0 +1,49 @@
+{
+    "app": {
+        "title": "Générateur de QR Code vCard",
+        "subtitle": "Créez et partagez vos coordonnées facilement"
+    },
+    "form": {
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "phone": "Téléphone",
+        "email": "Email",
+        "company": "Entreprise",
+        "jobTitle": "Fonction",
+        "website": "Site web",
+        "generateQr": "Générer le QR Code",
+        "saveProfile": "Sauvegarder le profil",
+        "profileName": "Nom du profil",
+        "profileNamePlaceholder": "Mon profil",
+        "validation": {
+            "required": "Ce champ est requis",
+            "invalidEmail": "Email invalide",
+            "invalidPhone": "Numéro de téléphone invalide",
+            "invalidUrl": "URL invalide"
+        }
+    },
+    "qrCode": {
+        "title": "QR Code",
+        "empty": "Remplissez le formulaire et cliquez sur Générer",
+        "download": "Télécharger en JPEG"
+    },
+    "profiles": {
+        "title": "Profils sauvegardés",
+        "select": "Sélectionner un profil",
+        "noProfiles": "Aucun profil sauvegardé",
+        "delete": "Supprimer",
+        "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce profil ?",
+        "saved": "Profil sauvegardé !",
+        "deleted": "Profil supprimé"
+    },
+    "theme": {
+        "dark": "Sombre",
+        "light": "Clair"
+    },
+    "language": {
+        "label": "Langue",
+        "fr": "Français",
+        "en": "English",
+        "pt": "Português"
+    }
+}
