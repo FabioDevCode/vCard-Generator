@@ -13,6 +13,7 @@
         "website": "Website",
         "generateQr": "Generate QR Code",
         "saveProfile": "Save Profile",
+        "reset": "Reset",
         "profileName": "Profile Name",
         "profileNamePlaceholder": "My profile",
         "validation": {

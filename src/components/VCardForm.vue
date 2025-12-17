@@ -20,10 +20,11 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'update:modelValue', value: VCardData): void
   (e: 'generate'): void
+  (e: 'reset'): void
 }>()
 
 const { t } = useAppI18n()
-const { validateVCard, saveProfile } = useVCard()
+const { validateVCard, saveProfile, createEmptyVCard } = useVCard()
 const message = useMessage()
 
 const formRef = ref<FormInst | null>(null)
@@ -97,6 +98,12 @@ const handleSaveProfile = () => {
   message.success(t('profiles.saved'))
   showSaveModal.value = false
   profileName.value = ''
+}
+
+const handleReset = () => {
+  const emptyData = createEmptyVCard()
+  Object.assign(formData, emptyData)
+  emit('reset')
 }
 </script>
 
@@ -181,6 +188,14 @@ const handleSaveProfile = () => {
           @click="openSaveModal"
         >
           {{ t('form.saveProfile') }}
+        </NButton>
+        <NButton
+          size="large"
+          block
+          tertiary
+          @click="handleReset"
+        >
+          {{ t('form.reset') }}
         </NButton>
       </NSpace>
     </NForm>

@@ -44,6 +44,14 @@ const handleDeleteProfile = () => {
     selectedProfileId.value = null
   }
 }
+
+const resetSelection = () => {
+  selectedProfileId.value = null
+}
+
+defineExpose({
+  resetSelection
+})
 </script>
 
 <template>

@@ -45,6 +45,11 @@ const handleDownload = () => {
   const name = `${vCardData.value.firstName}-${vCardData.value.lastName}`.toLowerCase().replace(/\s+/g, '-') || 'vcard'
   downloadAsJpeg(name)
 }
+const savedProfilesRef = ref<InstanceType<typeof SavedProfiles> | null>(null)
+
+const handleReset = () => {
+  savedProfilesRef.value?.resetSelection()
+}
 </script>
 
 <template>
@@ -78,13 +83,14 @@ const handleDownload = () => {
             <!-- Form Section -->
             <div class="form-section">
               <NCard :title="t('profiles.title')" class="profiles-card">
-                <SavedProfiles @load="handleLoadProfile" />
+                <SavedProfiles ref="savedProfilesRef" @load="handleLoadProfile" />
               </NCard>
 
               <NCard class="form-card">
                 <VCardForm
                   v-model="vCardData"
                   @generate="handleGenerate"
+                  @reset="handleReset"
                 />
               </NCard>
             </div>
