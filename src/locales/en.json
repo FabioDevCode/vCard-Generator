@@ -11,6 +11,7 @@
         "company": "Company",
         "jobTitle": "Job Title",
         "website": "Website",
+        "generate": "Generate",
         "generateQr": "Generate QR Code",
         "saveProfile": "Save Profile",
         "reset": "Reset",

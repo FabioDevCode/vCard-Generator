@@ -5,6 +5,7 @@ import {
   NLayout,
   NLayoutHeader,
   NLayoutContent,
+  NLayoutFooter,
   NSpace,
   NCard,
   NH1,
@@ -40,6 +41,12 @@ const handleGenerate = async () => {
 const handleLoadProfile = (data: VCardData) => {
   vCardData.value = { ...data }
 }
+
+const handleGenerateFromProfile = async (data: VCardData) => {
+  vCardData.value = { ...data }
+  await handleGenerate()
+}
+
 
 const handleDownload = () => {
   const name = `${vCardData.value.firstName}-${vCardData.value.lastName}`.toLowerCase().replace(/\s+/g, '-') || 'vcard'
@@ -83,7 +90,11 @@ const handleReset = () => {
             <!-- Form Section -->
             <div class="form-section">
               <NCard :title="t('profiles.title')" class="profiles-card">
-                <SavedProfiles ref="savedProfilesRef" @load="handleLoadProfile" />
+                <SavedProfiles
+                  ref="savedProfilesRef"
+                  @load="handleLoadProfile"
+                  @generate="handleGenerateFromProfile"
+                />
               </NCard>
 
               <NCard class="form-card">
@@ -96,6 +107,14 @@ const handleReset = () => {
             </div>
           </div>
         </NLayoutContent>
+
+        <NLayoutFooter class="app-footer">
+          <div class="footer-content">
+            <NText depth="3">
+              Created by <a href="https://github.com/FabioDevCode" target="_blank" class="footer-link">Fabio R. LOPES</a>
+            </NText>
+          </div>
+        </NLayoutFooter>
       </NLayout>
     </NMessageProvider>
   </NConfigProvider>
@@ -251,5 +270,34 @@ html, body {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+
+.app-footer {
+  padding: 24px;
+  background: #FFFFFF;
+  text-align: center;
+}
+
+.dark-mode .app-footer {
+  background: #101015;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+  text-decoration: underline;
 }
 </style>

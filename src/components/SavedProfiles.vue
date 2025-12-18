@@ -12,6 +12,7 @@ import { useAppI18n } from '@/composables/useI18n'
 
 const emit = defineEmits<{
   (e: 'load', data: VCardData): void
+  (e: 'generate', data: VCardData): void
 }>()
 
 const { t } = useAppI18n()
@@ -45,6 +46,15 @@ const handleDeleteProfile = () => {
   }
 }
 
+const handleGenerateProfile = () => {
+  if (selectedProfileId.value) {
+    const profile = getProfile(selectedProfileId.value)
+    if (profile) {
+      emit('generate', profile.data)
+    }
+  }
+}
+
 const resetSelection = () => {
   selectedProfileId.value = null
 }
@@ -66,19 +76,29 @@ defineExpose({
           clearable
           @update:value="handleSelectProfile"
         />
-        <NPopconfirm
-          v-if="selectedProfileId"
-          :positive-text="t('profiles.delete')"
-          negative-text="Cancel"
-          @positive-click="handleDeleteProfile"
-        >
-          <template #trigger>
-            <NButton type="error" size="medium" secondary block>
-              {{ t('profiles.delete') }}
-            </NButton>
-          </template>
-          {{ t('profiles.confirmDelete') }}
-        </NPopconfirm>
+        <div class="profile-actions" v-if="selectedProfileId">
+          <NButton
+            type="primary"
+            size="medium"
+            @click="handleGenerateProfile"
+            class="action-button"
+          >
+            {{ t('form.generate') }}
+          </NButton>
+
+          <NPopconfirm
+            :positive-text="t('profiles.delete')"
+            negative-text="Cancel"
+            @positive-click="handleDeleteProfile"
+          >
+            <template #trigger>
+              <NButton type="error" size="medium" secondary class="action-button">
+                {{ t('profiles.delete') }}
+              </NButton>
+            </template>
+            {{ t('profiles.confirmDelete') }}
+          </NPopconfirm>
+        </div>
       </NSpace>
     </div>
     <NEmpty
@@ -96,5 +116,21 @@ defineExpose({
 
 .profiles-content {
   width: 100%;
+}
+
+.profile-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.action-button {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .profile-actions {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

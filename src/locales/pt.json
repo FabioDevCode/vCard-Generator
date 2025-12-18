@@ -11,6 +11,7 @@
         "company": "Empresa",
         "jobTitle": "Cargo",
         "website": "Website",
+        "generate": "Gerar",
         "generateQr": "Gerar QR Code",
         "saveProfile": "Guardar Perfil",
         "reset": "Repor",
