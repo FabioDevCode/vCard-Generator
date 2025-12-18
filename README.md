@@ -10,7 +10,7 @@
 [![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?logo=vue.js)](https://vuejs.org/)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-5A0FC8?logo=pwa)](https://web.dev/progressive-web-apps/)
 
-[Démo en ligne](https://fabiodevcode.github.io/vCard-Generator/) · [Signaler un bug](https://github.com/FabioDevCode/vCard-Generator/issues)
+· [Démo en ligne](https://fabiodevcode.github.io/vCard-Generator/) ·
 
 </div>
 
