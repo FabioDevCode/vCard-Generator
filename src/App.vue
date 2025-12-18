@@ -23,7 +23,7 @@ import { useTheme } from '@/composables/useTheme'
 import { useAppI18n } from '@/composables/useI18n'
 
 const { createEmptyVCard, generateVCardString } = useVCard()
-const { qrDataUrl, isGenerating, generateQrCode, downloadAsJpeg } = useQrCode()
+const { qrDataUrl, isGenerating, generateQrCode, downloadAsJpeg, clearQrCode } = useQrCode()
 const { naiveTheme, themeOverrides, isDark } = useTheme()
 const { t, initLocale } = useAppI18n()
 
@@ -55,7 +55,9 @@ const handleDownload = () => {
 const savedProfilesRef = ref<InstanceType<typeof SavedProfiles> | null>(null)
 
 const handleReset = () => {
+  vCardData.value = createEmptyVCard()
   savedProfilesRef.value?.resetSelection()
+  clearQrCode()
 }
 </script>
 
@@ -94,6 +96,7 @@ const handleReset = () => {
                   ref="savedProfilesRef"
                   @load="handleLoadProfile"
                   @generate="handleGenerateFromProfile"
+                  @reset="handleReset"
                 />
               </NCard>
 

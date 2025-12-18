@@ -13,6 +13,7 @@ import { useAppI18n } from '@/composables/useI18n'
 const emit = defineEmits<{
   (e: 'load', data: VCardData): void
   (e: 'generate', data: VCardData): void
+  (e: 'reset'): void
 }>()
 
 const { t } = useAppI18n()
@@ -59,6 +60,11 @@ const resetSelection = () => {
   selectedProfileId.value = null
 }
 
+const handleResetSelection = () => {
+  selectedProfileId.value = null
+  emit('reset')
+}
+
 defineExpose({
   resetSelection
 })
@@ -68,14 +74,25 @@ defineExpose({
   <div class="saved-profiles">
     <div v-if="hasProfiles" class="profiles-content">
       <NSpace vertical :size="12">
-        <NSelect
-          v-model:value="selectedProfileId"
-          :options="profileOptions"
-          :placeholder="t('profiles.select')"
-          size="medium"
-          clearable
-          @update:value="handleSelectProfile"
-        />
+        <div class="select-row">
+          <NSelect
+            v-model:value="selectedProfileId"
+            :options="profileOptions"
+            :placeholder="t('profiles.select')"
+            size="medium"
+            clearable
+            @update:value="handleSelectProfile"
+          />
+          <NButton
+            v-if="selectedProfileId"
+            tertiary
+            square
+            @click="handleResetSelection"
+            class="reset-button"
+          >
+            ✕
+          </NButton>
+        </div>
         <div class="profile-actions" v-if="selectedProfileId">
           <NButton
             type="primary"
@@ -116,6 +133,17 @@ defineExpose({
 
 .profiles-content {
   width: 100%;
+}
+
+.select-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.reset-button {
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .profile-actions {
