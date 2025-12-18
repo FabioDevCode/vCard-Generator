@@ -181,12 +181,12 @@ html, body {
 
 .main-grid {
   display: grid;
+  max-width: 1400px;
   grid-template-columns: 1fr 400px;
   gap: 24px;
   align-items: start;
   overflow: visible;
-  margin: 24px;
-  margin-bottom: 48px;
+  margin: 24px auto;
 }
 
 .form-section {
@@ -216,10 +216,18 @@ html, body {
 }
 
 /* Mobile layout */
+@media (max-width: 1432px) {
+  .main-grid {
+    margin: 16px;
+    margin-bottom: 48px;
+  }
+}
+
 @media (max-width: 900px) {
   .main-grid {
     grid-template-columns: 1fr;
     margin: 16px;
+    margin-bottom: 48px;
   }
 
   .qr-section {
