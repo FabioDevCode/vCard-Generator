@@ -4,10 +4,10 @@ import { useI18n as useVueI18n } from 'vue-i18n'
 
 export type SupportedLocale = 'fr' | 'en' | 'pt'
 
-export const SUPPORTED_LOCALES: { value: SupportedLocale; label: string; flag: string }[] = [
-    { value: 'fr', label: 'Français', flag: '🇫🇷' },
-    { value: 'en', label: 'English', flag: '🇬🇧' },
-    { value: 'pt', label: 'Português', flag: '🇵🇹' }
+export const SUPPORTED_LOCALES: { value: SupportedLocale; label: string; }[] = [
+    { value: 'fr', label: 'Français' },
+    { value: 'en', label: 'English' },
+    { value: 'pt', label: 'Português' }
 ]
 
 export function useAppI18n() {

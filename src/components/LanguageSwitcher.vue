@@ -7,7 +7,7 @@ const { currentLocale, setLocale } = useAppI18n()
 
 const options = computed(() => {
   return SUPPORTED_LOCALES.map(locale => ({
-    label: `${locale.flag} ${locale.label}`,
+    label: `${locale.value.toUpperCase()} - ${locale.label}`,
     value: locale.value
   }))
 })
